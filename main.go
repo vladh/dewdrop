@@ -1,6 +1,8 @@
 package main
 
-import ( "fmt"
+import (
+	"time"
+	"fmt"
 
 	"golang.org/x/exp/io/i2c"
 
@@ -17,11 +19,14 @@ func main() {
 	b := bme280.New(d)
 	err = b.Init()
 
-	t, p, h, err := b.EnvData()
+	temp, pres, hum, err := b.EnvData()
 
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Printf("Temperature: %fC\nPressure: %fhPa\nHumidity: %f%%\n", t, p, h)
+	fmt.Printf("date=%s ", time.Now().Format(time.RFC3339))
+	fmt.Printf("temp=%f ", temp)
+	fmt.Printf("pres=%f ", pres)
+	fmt.Printf("hum=%f\n", hum)
 }
