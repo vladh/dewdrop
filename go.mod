@@ -1,3 +1,6 @@
+// © 2022 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: MIT
+
 module vladh.net/dewdrop
 
 go 1.18
