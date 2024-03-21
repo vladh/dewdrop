@@ -25,7 +25,9 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("date=%s ", time.Now().Format(time.RFC3339))
+	fmt.Printf("date=%s:00%s ",
+		time.Now().Format("2006-01-02T15:04"),
+		time.Now().Format("Z07:00"))
 	fmt.Printf("temp=%f ", temp)
 	fmt.Printf("pres=%f ", pres)
 	fmt.Printf("hum=%f\n", hum)
